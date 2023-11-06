@@ -34,6 +34,5 @@ The output of the project is a CSV file named `nyc_taxi_durations.csv`. Each row
 
 ## Running the Project
 
-To run the project, you need to have PySpark installed and a SparkSession initialized. You also need to replace `'train.csv'` in the code with the actual path to the NYC Taxi dataset, and `'nyc_taxi_durations.csv'` with the desired path for the output file.
-
+To run the project, you need to have PySpark installed and a SparkSession initialized.
 After setting up, you can run the project by executing the Python script in your development environment.
