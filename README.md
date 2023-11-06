@@ -10,6 +10,10 @@ The project performs the following steps:
 
 2. **Data Exploration**: The first few rows of the dataset are displayed and the schema is printed to the console.
 
+    ![Firstrows](media/(641).png)
+
+    ![Explore](media/(644).png)
+
 3. **Data Transformation**: The `pickup_datetime` and `dropoff_datetime` columns, which are initially in string format, are converted to Unix timestamp format.
 
 4. **Data Analysis**: The actual trip duration in minutes is calculated based on the pickup and dropoff times, and compared with the `trip_duration` column in the dataset.
@@ -23,6 +27,8 @@ The output of the project is a CSV file named `nyc_taxi_durations.csv`. Each row
 - `id`: The ID of the taxi trip.
 - `trip_duration`: The original trip duration from the dataset, in seconds.
 - `actual_duration`: The actual trip duration calculated based on the pickup and dropoff times, in minutes.
+
+    ![Output](media/(643).png)
 
 ## Running the Project
 
