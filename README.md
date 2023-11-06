@@ -1,43 +1,31 @@
-[![CI](https://github.com/nogibjj/SQL-Database-Operations-with-Python-Script-Osama/actions/workflows/cicd.yml/badge.svg)](https://github.com/nogibjj/SQL-Database-Operations-with-Python-Script-Osama/actions/workflows/cicd.yml)
+# NYC Taxi Trip Data Processing with PySpark
 
-# SQLite Project | Load, Transform, Query, and run CRUD operations on Data
+This project uses PySpark to process and analyze the New York City Taxi Trip Duration dataset. The dataset contains information about taxi trips in New York City, including the pickup and dropoff times, the trip duration, and other related data.
 
-This project demonstrates a robust data pipeline using SQLite, encompassing data loading, transformation, querying, and CRUD (Create, Read, Update, Delete) operations. The project is set up to run Continuous Integration and Continuous Deployment (CI/CD) pipelines, automating various database operations with each push to the repository. Additionally, it provides the flexibility to execute queries via the command line interface (CLI) with optional query output, allowing for efficient data analysis and management.
+## Project Overview
 
-![Alt Text](pipeline.png)
+The project performs the following steps:
 
+1. **Data Loading**: The dataset is loaded from a CSV file into a PySpark DataFrame.
 
-## Features
+2. **Data Exploration**: The first few rows of the dataset are displayed and the schema is printed to the console.
 
-- Load external data into an SQLite database.
-- Transform and clean data for analysis.
-- Execute SQL queries for data analysis.
-- Implement CRUD operations (Create, Read, Update, Delete) for database records.
-- Automate data pipeline operations with CI/CD.
+3. **Data Transformation**: The `pickup_datetime` and `dropoff_datetime` columns, which are initially in string format, are converted to Unix timestamp format.
 
-## Usage
+4. **Data Analysis**: The actual trip duration in minutes is calculated based on the pickup and dropoff times, and compared with the `trip_duration` column in the dataset.
 
-### Running the Pipeline
+5. **Result Saving**: The results, including the trip ID, the original trip duration, and the calculated actual duration, are saved to a new CSV file.
 
-To execute the data pipeline, follow these steps:
+## Output
 
-1. Clone the repository to your local machine.
-2. Navigate to the project directory.
-3. Run the data pipeline using in the main.py script with or without the --query flag on the CL the appropriate command.
+The output of the project is a CSV file named `nyc_taxi_durations.csv`. Each row in the file corresponds to a taxi trip and contains the following columns:
 
-### Executing Queries
+- `id`: The ID of the taxi trip.
+- `trip_duration`: The original trip duration from the dataset, in seconds.
+- `actual_duration`: The actual trip duration calculated based on the pickup and dropoff times, in minutes.
 
-The project allows you to execute SQL queries and view the results. You can use the `--query` flag followed by your SQL query to include the query result in the output.
+## Running the Project
 
-This command will execute the specified SQL query and display the result.
+To run the project, you need to have PySpark installed and a SparkSession initialized. You also need to replace `'train.csv'` in the code with the actual path to the NYC Taxi dataset, and `'nyc_taxi_durations.csv'` with the desired path for the output file.
 
-## CI/CD
-
-The project is set up with Continuous Integration and Continuous Deployment (CI/CD) pipelines. With each push to the repository, the following operations are performed automatically:
-
-1. Data loading into the SQLite database.
-2. Data transformation and cleaning.
-3. SQL queries execution.
-4. Logging the output of the operations.
-
-The output of the operations, including any query results and CRUD actions, is automatically saved to the `output.txt` file for reference.
+After setting up, you can run the project by executing the Python script in your development environment.
