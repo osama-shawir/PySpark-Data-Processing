@@ -1,3 +1,5 @@
+[![CI](https://github.com/osama-shawir/PySpark-Data-Processing/actions/workflows/cicd.yml/badge.svg)](https://github.com/osama-shawir/PySpark-Data-Processing/actions/workflows/cicd.yml)
+
 # NYC Taxi Trip Data Processing with PySpark
 
 This project uses PySpark to process and analyze the New York City Taxi Trip Duration dataset. The dataset contains information about taxi trips in New York City, including the pickup and dropoff times, the trip duration, and other related data.
